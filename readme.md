@@ -8,4 +8,4 @@ project dependencies.
 Copy the contents of .env.example to .env and 
 enter your database credentials. 
 
-You should be ready to go. I think.
+You should be ready to go. I think. 
