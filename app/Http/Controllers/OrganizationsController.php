@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Organization;
 use Illuminate\Http\Request;
 
 class OrganizationsController extends Controller
@@ -23,7 +24,8 @@ class OrganizationsController extends Controller
      */
     public function create()
     {
-        //
+        $organization = new Organization();
+        return view('organization.create', ['organization' => $organization ]);
     }
 
     /**
