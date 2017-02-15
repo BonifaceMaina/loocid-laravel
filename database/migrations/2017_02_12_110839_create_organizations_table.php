@@ -18,6 +18,7 @@ class CreateOrganizationsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('location');
+            $table->string('email');
             $table->text('description');
             $table->timestamps();
         });
