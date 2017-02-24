@@ -1,0 +1,94 @@
+body{
+    background-image: url('/images/background.png');
+}
+
+.carousel-class{
+    position: relative;
+}
+.row-height{
+height: 100%;
+    width: 100%;
+}
+
+.column{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+
+}
+
+.column-height{
+    height:200px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.image-container{
+    zoom: 2;
+    height:90%;
+    background-size: cover;  
+    background-position: center;
+}
+
+.organization-links{
+    display: inline;
+}
+.carousel-indicators li{
+    visibility: hidden;
+}
+.navbar{
+    background-color: white;
+    padding-bottom: 0;
+    color: darkblue;
+    font: Helvetica;
+}
+
+.container-header{
+    background-color: white;
+    height: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.wrapper{
+    padding-top: -30px;
+}
+
+.search-input{
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+.links-column{
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+.organization-tabs {
+    color: dodgerblue;
+    padding-top: 5px;
+    margin-top: 5px;
+
+}
+.organization-tabs.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.donate-tab{
+    padding-top: 0px;
+}
+
+.footer{
+    padding-bottom: 0px;
+}
+
+.container{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.row{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
