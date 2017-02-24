@@ -14,7 +14,8 @@ class OrganizationsController extends Controller
      */
     public function index()
     {
-        return view('organization.index');
+        $organizations = Organization::all();
+        return view('organization.index', compact('organizations'));
     }
 
     /**
@@ -36,7 +37,7 @@ class OrganizationsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
