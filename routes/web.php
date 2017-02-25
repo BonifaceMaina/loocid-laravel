@@ -18,6 +18,11 @@ Route::get('/', function () {
 
 Route::auth();
 
+
+Route::get('/', 'HomePageController@index');
+
+Route::auth();
+
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index');
