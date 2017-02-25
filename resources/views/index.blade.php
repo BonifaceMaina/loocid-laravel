@@ -54,9 +54,9 @@
                         <div class="col-xs-4">
                             <a href="organization.html">
                             <div class="column column-height"  style="background-color: beige">
-                                <div class="image-container" style="background-color: white">
+                                <div class="image-container">
                                     <img src="{{asset('/images/organizations/ngo1.jpg')}}" class="img-responsive">
-                                </div>
+                                </div><br>
                                 <p class="organization-links">Organization's Name</p>
                             </div>
                             </a>
@@ -65,10 +65,9 @@
                         <div class="col-xs-4">
                             <a href="organization.html">
                             <div class="column column-height" style="background-color:beige;">
-                                <div class="image-container" style="background-color: white">
+                                <div class="image-container">
                                     <img src="{{asset('/images/organizations/ngo1.png')}}" class="img-responsive">
-
-                                </div>
+                                </div><br>
                                 <p class="organization-links">Organization's Name</p>
                             </div>
                             </a>
@@ -79,11 +78,9 @@
                             <div class="column column-height" style="background-color: beige">
                                 <div class="image-container" style="background-color: white">
                                     <img src="{{asset('/images/organizations/ngo4.png')}}" class="img-responsive">
-
-                                </div>
+                                </div><br>
                                 <p class="organization-links">Organization's Name</p>
                             </div>
-                            </a>
                         </div>
                 </div>
             </div>
@@ -91,43 +88,42 @@
             <div class="row">
                 <div class="here">
                     <div class="col-xs-4">
-                        <a href="">
                             <div class="column column-height"  style="background-color: beige">
-                                <div class="image-container" style="background-color: white">
-                                    <img src="{{asset('/images/organizations/ngo1.jpg')}}" class="img-responsive">
-                                </div>
+                                <a href="organization.html">
+                                    <div class="image-container">
+                                        <img src="{{asset('/images/organizations/ngo1.jpg')}}" class="img-responsive images">
+                                    </div><br>
+                                </a>
                                 <p class="organization-links">Organization's Name</p>
                             </div>
-                        </a>
                     </div>
 
                     <div class="col-xs-4">
-                        <a href="">
                             <div class="column column-height" style="background-color:beige;">
-                                <div class="image-container" style="background-color: white">
-                                    <img src="{{asset('/images/organizations/ngo1.png')}}" class="img-responsive">
-
-                                </div>
-                                <p class="organization-links">Organization's Name</p>
+                                <a href="">
+                                    <div class="image-container">
+                                        <img src="{{asset('/images/organizations/ngo1.png')}}" class="img-responsive">
+                                    </div><br>
+                                </a>
                             </div>
-                        </a>
                     </div>
 
                     <div class="col-xs-4">
-                        <a href="">
                             <div class="column column-height" style="background-color: beige">
-                                <div class="image-container" style="background-color: white">
-                                    <img src="{{asset('/images/organizations/ngo4.png')}}" class="img-responsive">
-
+                                <a href="">
+                                <div class="image-container">
+                                    <img src="{{asset('/images/organizations/ngo4.png')}}" class="img-responsive images">
                                 </div>
-                                <p class="organization-links">Organization's Name</p>
+                                </a>
+                                <div class="organizational-details">
+                                    <p class="organization-links">Organization's Name</p>
+                                    <p>Location</p>
+                                    <p>Category</p>
+                                </div>
                             </div>
-                        </a>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>

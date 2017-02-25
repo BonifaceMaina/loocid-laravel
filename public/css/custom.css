@@ -1,5 +1,7 @@
 body{
     background-image: url('/images/background.png');
+    font:Helvetica;
+
 }
 
 .carousel-class{
@@ -18,16 +20,14 @@ height: 100%;
 }
 
 .column-height{
-    height:200px;
+    height:250px;
     margin-bottom: 0;
     margin-top: 0;
 }
 
 .image-container{
-    zoom: 2;
-    height:90%;
-    background-size: cover;  
-    background-position: center;
+    height:150px;
+    width:340px;
 }
 
 .organization-links{
@@ -85,10 +85,31 @@ height: 100%;
 }
 
 .container{
-    padding-top: 20px;
+    padding-top: 60px;
     padding-bottom: 20px;
 }
 .row{
     padding-bottom: 10px;
     padding-top: 10px;
+}
+
+.basic-content-container{
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: white;
+
+}
+
+.avatar-container{
+    height: 65px;
+    width: 65px;
+}
+.tagline{
+    display: inline-block;
+}
+
+.organizational-details{
+    font-weight: 600;
+    color: #0f0f0f;
+    font-size: 15px;
 }
