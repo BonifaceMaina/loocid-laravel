@@ -63,7 +63,7 @@ class OrganizationsController extends Controller
 
         Organization::create($input);
 
-        return redirect('/organizations/index');
+        return redirect('/organization/index');
 
     }
 

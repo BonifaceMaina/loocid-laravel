@@ -50,103 +50,24 @@
     <div class="section">
         <div class="container-fluid">
             <div class="row">
-                <div class="here">
-<<<<<<< HEAD
-                        <div class="col-xs-4">
-                            <a href="organization.html">
-                            <div class="column column-height"  style="background-color: beige">
-                                <div class="image-container">
-                                    <img src="{{asset('/images/organizations/ngo1.jpg')}}" class="img-responsive">
-                                </div><br>
-                                <p class="organization-links">Organization's Name</p>
-                            </div>
-                            </a>
-                        </div>
-=======
->>>>>>> 91a9edf747e51fa346eb3764c6ec2553817af55f
-
                     @if($organizations)
                         @foreach($organizations as $organization)
                         <div class="col-xs-4">
-<<<<<<< HEAD
-                            <a href="organization.html">
-                            <div class="column column-height" style="background-color:beige;">
-                                <div class="image-container">
-                                    <img src="{{asset('/images/organizations/ngo1.png')}}" class="img-responsive">
-                                </div><br>
-                                <p class="organization-links">Organization's Name</p>
-                            </div>
-                            </a>
-                        </div>
 
-                        <div class="col-xs-4">
-                            <a href="organization.html">
-                            <div class="column column-height" style="background-color: beige">
-                                <div class="image-container" style="background-color: white">
-                                    <img src="{{asset('/images/organizations/ngo4.png')}}" class="img-responsive">
-                                </div><br>
-                                <p class="organization-links">Organization's Name</p>
-=======
                             <a href="{{ route('organization.index') }}">
                             <div class="column column-height"  style="background-color: beige">
-                                <div class="image-container" style="background-color: white">
+                                <div class="image-container">
                                     {{--<img src="{{ $organizations->photo ? $organizations->photo->image_path : '/images/organizations/ngo1.jpg'}}" class="img-responsive">--}}
                                     <img src="{{asset('/images/organizations/ngo1.jpg')}}" class="img-responsive" >
                                 </div>
                                 <p class="organization-links">{{ $organization->name }}</p>
                                 <p class="organization-links">{{ $organization->location }}</p>
->>>>>>> 91a9edf747e51fa346eb3764c6ec2553817af55f
                             </div>
+                            </a>
                         </div>
-<<<<<<< HEAD
-                </div>
+                    @endforeach
+                        @endif
             </div>
-
-            <div class="row">
-                <div class="here">
-                    <div class="col-xs-4">
-                            <div class="column column-height"  style="background-color: beige">
-                                <a href="organization.html">
-                                    <div class="image-container">
-                                        <img src="{{asset('/images/organizations/ngo1.jpg')}}" class="img-responsive images">
-                                    </div><br>
-                                </a>
-                                <p class="organization-links">Organization's Name</p>
-                            </div>
-                    </div>
-
-                    <div class="col-xs-4">
-                            <div class="column column-height" style="background-color:beige;">
-                                <a href="">
-                                    <div class="image-container">
-                                        <img src="{{asset('/images/organizations/ngo1.png')}}" class="img-responsive">
-                                    </div><br>
-                                </a>
-                            </div>
-                    </div>
-
-                    <div class="col-xs-4">
-                            <div class="column column-height" style="background-color: beige">
-                                <a href="">
-                                <div class="image-container">
-                                    <img src="{{asset('/images/organizations/ngo4.png')}}" class="img-responsive images">
-                                </div>
-                                </a>
-                                <div class="organizational-details">
-                                    <p class="organization-links">Organization's Name</p>
-                                    <p>Location</p>
-                                    <p>Category</p>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-=======
-                        @endforeach
-                    @endif
-
-
->>>>>>> 91a9edf747e51fa346eb3764c6ec2553817af55f
         </div>
     </div>
 </div>

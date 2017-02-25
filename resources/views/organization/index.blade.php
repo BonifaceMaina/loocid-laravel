@@ -73,13 +73,13 @@
                             <p>Semper erat a pretium ante dis consectetur praesent interdum tempus nisl hendrerit laoreet aliquet dictumst integer. Eu phasellus a suspendisse adipiscing a nam class non ullamcorper nec habitasse magna volutpat ac risus accumsan. Integer sagittis parturient lacus congue vestibulum a magnis cum a cum facilisi a habitasse nisi blandit suspendisse a consequat varius parturient facilisi. Fermentum id ad adipiscing habitant ut est ante suscipit parturient consectetur vestibulum sem primis diam fringilla aliquet ullamcorper cursus molestie.        Fames vitae senectus quam ullamcorper adipiscing.</p>
                         </div>
                         <div class="tab-pane profile">
-                            <h3>Organization's Profile</h3>
-                            <h4>To be hidden when the user is not logged in/ authorized</h4>
-                            Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
-                            Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
-                            Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.
-                            Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
-
+                            @if(Auth::guest())
+                                {{--user is not logged in--}}
+                                <p>You have to be logged in to view this information</p>
+                            @else
+                                {{--user is logged in--}}
+                                <p>You are viewing private information.</p>
+                            @endif
                         </div>
                         <div class="tab-pane messages">messages</div>
                         <div class="tab-pane settings">settings</div>
