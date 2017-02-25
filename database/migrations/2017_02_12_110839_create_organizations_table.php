@@ -21,6 +21,9 @@ class CreateOrganizationsTable extends Migration
             $table->string('email');
             $table->text('general_description');
             $table->text('privileged_content');
+            $table->integer('category_id')->index()->unsigned()->nullable();/*Added to categorise organizations*/
+            $table->string('password');/*This will allow organizations to login and edit their content*/
+            $table->rememberToken();/*Used to handle sessions after user is logged in*/
             $table->timestamps();
         });
     }
