@@ -51,81 +51,23 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="here">
+
+                    @if($organizations)
+                        @foreach($organizations as $organization)
                         <div class="col-xs-4">
-                            <a href="organization.html">
+                            <a href="{{ route('organization.index') }}">
                             <div class="column column-height"  style="background-color: beige">
                                 <div class="image-container" style="background-color: white">
-                                    <img src="{{asset('/images/organizations/ngo1.jpg')}}" class="img-responsive">
+                                    {{--<img src="{{ $organizations->photo ? $organizations->photo->image_path : '/images/organizations/ngo1.jpg'}}" class="img-responsive">--}}
+                                    <img src="{{asset('/images/organizations/ngo1.jpg')}}" class="img-responsive" >
                                 </div>
-                                <p class="organization-links">Organization's Name</p>
+                                <p class="organization-links">{{ $organization->name }}</p>
+                                <p class="organization-links">{{ $organization->location }}</p>
                             </div>
                             </a>
                         </div>
-
-                        <div class="col-xs-4">
-                            <a href="organization.html">
-                            <div class="column column-height" style="background-color:beige;">
-                                <div class="image-container" style="background-color: white">
-                                    <img src="{{asset('/images/organizations/ngo1.png')}}" class="img-responsive">
-
-                                </div>
-                                <p class="organization-links">Organization's Name</p>
-                            </div>
-                            </a>
-                        </div>
-
-                        <div class="col-xs-4">
-                            <a href="organization.html">
-                            <div class="column column-height" style="background-color: beige">
-                                <div class="image-container" style="background-color: white">
-                                    <img src="{{asset('/images/organizations/ngo4.png')}}" class="img-responsive">
-
-                                </div>
-                                <p class="organization-links">Organization's Name</p>
-                            </div>
-                            </a>
-                        </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="here">
-                    <div class="col-xs-4">
-                        <a href="">
-                            <div class="column column-height"  style="background-color: beige">
-                                <div class="image-container" style="background-color: white">
-                                    <img src="{{asset('/images/organizations/ngo1.jpg')}}" class="img-responsive">
-                                </div>
-                                <p class="organization-links">Organization's Name</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-xs-4">
-                        <a href="">
-                            <div class="column column-height" style="background-color:beige;">
-                                <div class="image-container" style="background-color: white">
-                                    <img src="{{asset('/images/organizations/ngo1.png')}}" class="img-responsive">
-
-                                </div>
-                                <p class="organization-links">Organization's Name</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-xs-4">
-                        <a href="">
-                            <div class="column column-height" style="background-color: beige">
-                                <div class="image-container" style="background-color: white">
-                                    <img src="{{asset('/images/organizations/ngo4.png')}}" class="img-responsive">
-
-                                </div>
-                                <p class="organization-links">Organization's Name</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+                        @endforeach
+                    @endif
 
 
         </div>
