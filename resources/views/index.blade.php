@@ -54,12 +54,11 @@
                         @foreach($organizations as $organization)
                             <div class="col-xs-4">
 
-                                <a href="{{ route('organization.index') }}">
+                                <a href="{{ route('organization.show', $organization['id']) }}">
                                     <div class="column column-height" style="background-color: beige">
                                         <div class="image-container">
-                                            {{--<img src="{{ $organizations->photo ? $organizations->photo->image_path : '/images/organizations/ngo1.jpg'}}" class="img-responsive">--}}
-                                            <img src="{{asset('/images/organizations/ngo1.jpg')}}"
-                                                 class="img-responsive">
+                                            <img src="{{ $organization->photo ? URL::to($organization->photo->image_path) : 'http://placehold.it/200x200'}}" class="img-responsive">
+                                            {{--<img src="{{asset('/images/organizations/ngo1.jpg')}}" class="img-responsive">--}}
                                         </div>
                                         <p class="organization-links">{{ $organization->name }}</p>
                                         <p class="organization-links">{{ $organization->location }}</p>

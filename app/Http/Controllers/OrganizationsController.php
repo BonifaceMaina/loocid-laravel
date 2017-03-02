@@ -63,7 +63,7 @@ class OrganizationsController extends Controller
 
         Organization::create($input);
 
-        return redirect('/organization/index');
+        return redirect('/');
 
     }
 
@@ -75,7 +75,9 @@ class OrganizationsController extends Controller
      */
     public function show($id)
     {
-        //
+        $organization = Organization::findOrFail($id);
+
+        return view('organization.show', compact('organization'));
     }
 
     /**
