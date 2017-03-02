@@ -7,6 +7,7 @@ use App\Photo;
 use App\Organization;
 //use App\User;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 
 class OrganizationsController extends Controller
 {
@@ -88,7 +89,10 @@ class OrganizationsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $organization = Organization::findOrFail($id);
+
+
+        return view('organization.edit', compact('organization'));
     }
 
     /**
@@ -98,9 +102,32 @@ class OrganizationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(OrganizationRequest $request, $id)
     {
-        //
+
+        $organization = Organization::findOrFail($id);
+
+        $input = $request->all();
+
+        //image processing
+        if ($file = $request->file('photo_id')){
+
+            //get the name of the file. Append timestamp on it
+            $nameoffile = time() . $file->getClientOriginalName();
+
+            //move the uploaded file to the image directory
+            $file->move('images', $nameoffile);
+
+            //Store file path in photo db and assign it an id
+            $photo = Photo::create(['image_path'=>$nameoffile]);
+
+            //retrieve id from stored photo path to assign it to user
+            $input['photo_id'] = $photo->id;
+        }
+
+        $organization->update($input);
+
+        return view('organization.show', compact('organization'));
     }
 
     /**
