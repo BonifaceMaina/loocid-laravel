@@ -10,6 +10,10 @@
             <th>Id</th>
             <th>Photo</th>
             <th>Name</th>
+            <th>Mission</th>
+            <th>Vision</th>
+            <th>Date Founded</th>
+            <th>Video Link</th>
             <th>Email</th>
             <th>Location</th>
             <th>General description</th>
@@ -25,6 +29,10 @@
                 <td>{{$organization->id}}</td>
                 <td><img src="{{ $organization->photo ? URL::to($organization->photo->image_path) : 'http://placehold.it/200x200'}}" alt=""></td>
                 <td>{{$organization->name}}</td>
+                <td>{{$organization->mission}}</td>
+                <td>{{$organization->vision}}</td>
+                <td>{{$organization->datefounded}}</td>
+                <td>{{$organization->videolink}}</td>
                 <td>{{$organization->email}}</td>
                 <td>{{$organization->location}}</td>
                 <td>{{$organization->general_description}}</td>

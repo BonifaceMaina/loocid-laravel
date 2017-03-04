@@ -17,7 +17,11 @@ class CreateOrganizationsTable extends Migration
 
             $table->increments('id');
             $table->string('name');
+            $table->string('mission');
+            $table->string('vision');
+            $table->date('datefounded');
             $table->string('location');
+            $table->string('videolink');
             $table->string('email');
             $table->text('general_description');
             $table->text('privileged_content');

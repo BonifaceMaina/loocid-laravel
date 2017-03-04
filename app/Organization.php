@@ -9,7 +9,7 @@ class Organization extends Model
 
     // These attributes are mass assignable.
 
-    protected $fillable = ['name', 'location', 'general_description', 'privileged_content',
+    protected $fillable = ['name', 'mission','vision', 'datefounded', 'videolink', 'location', 'general_description', 'privileged_content',
        'photo_id', 'email' ];
 
     public function photo() {
