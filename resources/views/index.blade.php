@@ -53,17 +53,16 @@
                     @if($organizations)
                         @foreach($organizations as $organization)
                             <div class="col-xs-4">
-
-                                <a href="{{ route('organization.show', $organization['id']) }}">
                                     <div class="column column-height" style="background-color: beige">
                                         <div class="image-container">
-                                            <img src="{{ $organization->photo ? URL::to($organization->photo->image_path) : 'http://placehold.it/200x200'}}" class="img-responsive">
-                                            {{--<img src="{{asset('/images/organizations/ngo1.jpg')}}" class="img-responsive">--}}
+                                           <a href="{{ route('organization.show', $organization['id']) }}">
+                                             <img src="{{ $organization->photo ? URL::to($organization->photo->image_path) : 'http://placehold.it/200x200'}}" class="img-responsive">
+                                             {{--<img src="{{asset('/images/organizations/ngo1.jpg')}}" class="img-responsive">--}}
+                                           </a>
                                         </div>
-                                        <p class="organization-links">{{ $organization->name }}</p>
+                                        <p class="organization-links">{{ $organization->name }}</p><br>
                                         <p class="organization-links">{{ $organization->location }}</p>
                                     </div>
-                                </a>
                             </div>
                         @endforeach
                     @endif

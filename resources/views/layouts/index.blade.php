@@ -5,6 +5,7 @@
     <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('/css/bootstrap-theme.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('/css/bootstrap-theme.min.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{asset('fonts/css/font-awesome.min.css')}}">
     <link href="{{asset('/css/custom.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -30,7 +31,7 @@
                 </div>
 
             </div>
-            <div class="col-sm-5 ">
+            <div class="col-sm-2 ">
                 <form class="navbar-form navbar-left" role="search" method="get"action="#">
                     <div class="form-group search-input">
                         <input type="text" class="form-control" name="search" placeholder="Search for Organizations">
@@ -38,26 +39,31 @@
                     <!--<button type="submit" class="btn btn-default">Search</button>-->
                 </form>
             </div>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navigation-doc">
+            <div class="col-sm-7">
+                <div class="collapse navbar-collapse" id="navigation-doc">
             <ul  class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#">Categories</a>
+                    <a href="#">Organizations</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="#">About Us</a>
                 </li>
                 <li>
                     <!--<a href="#">CREATE ORGANIZATION</a> -->
-                    <a href="#">Create Organizations</a>
+                    <a href="#">Sign Up</a>
 
                 </li>
+                <li>
+                    <a href="#"> Sign in</a>
                 </li>
             </ul>
 
-        </div><!-- /.navbar-collapse -->
+        </div>
+            </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- /.navbar-collapse -->
     </nav>
 </div>
 
@@ -65,45 +71,31 @@
 
 {{--footer starts here--}}
 
-<footer>
-    <div >
-        <nav class="pull-left">
+<footer class="footer">
+    <div class="container">
+        <div class="footer-text">
+            &copy 2017 Loocid. All Rights Reserved.
+            <br>
+            <span>Loocid is and has always been an independent body. We strive to bring organizations closer to you, know them, contribute to their cause and make an impact in the society.</span>
+        </div>
+        <div class="footer-links">
             <ul>
                 <li>
-                    <a href="loocid.org">
-                        Loocid
-                    </a>
+                    <a href="#">About Us</a>
                 </li>
                 <li>
-                    <a href="loocid.org/about">
-                        About Us
-                    </a>
+                    <a href="#">Legal</a>
                 </li>
                 <li>
-                    <a href="loocid.org/blog">
-                        Blog
-                    </a>
+                    <a href="#">Advertise</a>
                 </li>
                 <li>
-                    <a href="#">
-                        Licenses
-                    </a>
+                    <a href="#">Contact Us</a>
+                </li>
+                <li>
+                    <a href="#">Terms of Use</a>
                 </li>
             </ul>
-        </nav>
-        <div class="social-area pull-right">
-            <a class="btn btn-social btn-twitter btn-simple" href="https://twitter.com/Loocid">
-                <i class="fa fa-twitter"></i>
-            </a>
-            <a class="btn btn-social btn-facebook btn-simple" href="https://www.facebook.com/Loocid">
-                <i class="fa fa-facebook-square"></i>
-            </a>
-            <a class="btn btn-social btn-google btn-simple" href="https://plus.google.com/+Loocid">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </div>
-        <div class="copyright">
-            &copy; 2017 Loocid, made with love
         </div>
     </div>
 </footer>
@@ -113,14 +105,11 @@
 <script src="{{asset('/js/bootstrap.js')}}"></script>
 <script src="{{asset('/js/bootstrap.min.js')}}"></script>
 <script>
-    $function()
-    {
-
+   
         $('.carousel').carousel({
             interval: 3000
 
 
-        })
-    }
+        });
 </script>
 </html>
