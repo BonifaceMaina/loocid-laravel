@@ -11,17 +11,24 @@
                     @include('includes.form-error')
 
                     <div class="panel-body">
-                        {!! Form::model($organization, ['action' => 'OrganizationsController@store', 'files'=>'true']) !!}
+                        {!! Form::model($organization, ['method'=>'post', 'action' => 'OrganizationsController@store', 'files'=>'true']) !!}
 
                         <div class="form-group">
                             {!! Form::label('name', 'Name') !!}
                             {!! Form::text('name', '', ['class' => 'form-control']) !!}
                         </div>
-
-                        {{--<div class="form-group">--}}
-                            {{--{!! Form::label('Date Founded', 'Date Founded') !!}--}}
-                            {{--{!! Form::date('date founded', \Carbon\Carbon::now()) !!}--}}
-                        {{--</div>--}}
+                        <div class="form-group">
+                            {!! Form::label('mission', 'Mission') !!}
+                            {!! Form::text('mission', '', ['class' => 'form-control']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('vision', 'Vision') !!}
+                            {!! Form::text('vision', '', ['class' => 'form-control']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('datefounded', 'Date Founded') !!}
+                            {!! Form::date('datefounded', \Carbon\Carbon::now()) !!}
+                        </div>
                         <div class="form-group">
                             {!! Form::label('location', 'Location') !!}
                             {!! Form::text('location', '', ['class' => 'form-control']) !!}
@@ -40,6 +47,10 @@
                         <div class="form-group">
                             {!! Form::label('photo_id', 'Image') !!}
                             {!! Form::file('photo_id', '', ['class' => 'form-control']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('videolink', 'Video Link') !!}
+                            {!! Form::text('videolink', '', ['class' => 'form-control']) !!}
                         </div>
 
                         {{--<div class="form-group">--}}

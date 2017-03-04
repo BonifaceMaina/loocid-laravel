@@ -27,6 +27,9 @@ class OrganizationRequest extends FormRequest
 
             'name' => 'required',
             'location' => 'required',
+            'datefounded' => 'required',
+            'mission' => 'required',
+            'vision' => 'required',
             'general_description' => 'required',
             'privileged_content' => 'required',
             'email' => 'required'
