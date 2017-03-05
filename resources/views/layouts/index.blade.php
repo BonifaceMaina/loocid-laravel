@@ -43,18 +43,18 @@
                 <div class="collapse navbar-collapse" id="navigation-doc">
             <ul  class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#">Organizations</a>
+                    <a href="{{ route('organization.create') }}">Create Organization</a>
                 </li>
                 <li>
                     <a href="#">About Us</a>
                 </li>
                 <li>
                     <!--<a href="#">CREATE ORGANIZATION</a> -->
-                    <a href="#">Sign Up</a>
+                    <a href="{{ route('login') }}">Log In</a>
 
                 </li>
                 <li>
-                    <a href="#"> Sign in</a>
+                    <a href="{{ route('register') }}"> Sign Up</a>
                 </li>
             </ul>
 
