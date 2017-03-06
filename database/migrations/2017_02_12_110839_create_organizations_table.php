@@ -21,7 +21,7 @@ class CreateOrganizationsTable extends Migration
             $table->string('vision');
             $table->date('datefounded');
             $table->string('location');
-            $table->string('videolink');
+            $table->string('videolink')->nullable;
             $table->string('email');
             $table->text('general_description');
             $table->text('privileged_content');

@@ -58,9 +58,9 @@
                                            <a href="{{ route('organization.show', $organization['id']) }}">
                                              <img src="{{ $organization->photo ? URL::to($organization->photo->image_path) : 'http://placehold.it/200x200'}}" class="img-responsive">
                                              {{--<img src="{{asset('/images/organizations/ngo1.jpg')}}" class="img-responsive">--}}
-                                           </a>
+                                           </a>                                           
+                                        <h4 class="organization-links">{{ $organization->name }}</h4>
                                         </div>
-                                        <p class="organization-links">{{ $organization->name }}</p><br>
                                         <p class="organization-links">{{ $organization->location }}</p>
                                     </div>
                             </div>

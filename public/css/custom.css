@@ -3,6 +3,7 @@ body{
     font:Helvetica;
     font-size: 12px;
     background-color: #F7F7F7;
+    height: auto !important;
 
 }
 
@@ -69,7 +70,6 @@ height: 100%;
 }
 
 .organization-tabs {
-    color: dodgerblue;
     padding-top: 5px;
     margin-top: 5px;
 
@@ -82,10 +82,6 @@ height: 100%;
 
 .donate-tab{
     padding-top: 0px;
-}
-
-.footer{
-    padding-bottom: 0px;
 }
 
 .container{
@@ -137,8 +133,14 @@ height: 100%;
 .basic-content-container tr{
     line-height: 5px;
 }
+.login-container{
+    padding-top: 40px;
+}
 .footer{
     background-color: #000;
+    position: absolute;
+    width: 100%;
+    
 }
 .footer-text{
     width: 40.677%;
