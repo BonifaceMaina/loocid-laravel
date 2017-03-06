@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Validator;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use DB;
+use Mail;
 
 class RegisterController extends Controller
 {
@@ -23,7 +26,7 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     /**
-     * Where to redirect users after registration.
+     * Where to redirect users after login / registration.
      *
      * @var string
      */
@@ -43,7 +46,7 @@ class RegisterController extends Controller
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @return \Illuminate\Validation\Validator
      */
     protected function validator(array $data)
     {
@@ -67,5 +70,38 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+    public function register(Request $request) {
+        $input = $request->all();
+        $validator = $this->validator($input);
+
+        if ($validator->passes()){
+            $user = $this->create($input)->toArray();
+            $user['link'] = str_random(30);
+
+            DB::table('user_activations')->insert(['id_user'=>$user['id'],'token'=>$user['link']]);
+
+            Mail::send('emails.activation', $user, function($message) use ($user){
+                $message->to($user['email']);
+                $message->subject('Loocid - Activation Code');
+            });
+            return redirect()->to('login')->with('success',"We sent you an activation code. Please check your mail.");
+        }
+        return back()->with('errors',$validator->errors());
+    }
+
+    public function userActivation($token){
+        $check = DB::table('user_activations')->where('token',$token)->first();
+        if(!is_null($check)){
+            $user = User::find($check->id_user);
+            if ($user->is_activated ==1){
+                return redirect()->to('login')->with('success',"user are already actived.");
+
+            }
+            $user->update(['is_activated' => 1]);
+            DB::table('user_activations')->where('token',$token)->delete();
+            return redirect()->to('login')->with('success',"user active successfully.");
+        }
+        return redirect()->to('login')->with('Warning',"your token is invalid");
     }
 }

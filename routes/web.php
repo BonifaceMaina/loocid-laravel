@@ -29,3 +29,5 @@ Route::get('/home', 'HomeController@index');
 
 
 Route::resource('/organization', 'OrganizationsController');
+
+Route::get('/user/activation/{token}', 'Auth\RegisterController@userActivation');
