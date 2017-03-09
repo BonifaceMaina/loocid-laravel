@@ -148,8 +148,7 @@
                 </li>
               </ul>
             </div>
-            <br />
-            <h3>Social Signup</h3>
+          
             <div class="basic-content-container">
               <!-- this is where oneall API will fall. -->
             </div>
