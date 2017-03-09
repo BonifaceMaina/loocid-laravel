@@ -4,7 +4,7 @@
 
     {{--carousel starts here--}}
     <div class="carousel-class">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
             <!--the carousel indicators-->
             <ol class="carousel-indicators">
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -49,24 +49,46 @@
     <div class="container">
         <div class="section">
             <div class="container-fluid">
-                <div class="row">
                     @if($organizations)
+                    <?php $count=0; ?>
+                    @if ($count=0 or is_int($count%3))
+                    <div class="row">
+                      @endif
                         @foreach($organizations as $organization)
-                            <div class="col-xs-4">
-                                    <div class="column column-height" style="background-color: beige">
+                            <div class="col-xs-12 col-md-4">
+                                    <div class="column column-height">
                                         <div class="image-container">
                                            <a href="{{ route('organization.show', $organization['id']) }}">
                                              <img src="{{ $organization->photo ? URL::to($organization->photo->image_path) : 'http://placehold.it/200x200'}}" class="img-responsive">
-                                             {{--<img src="{{asset('/images/organizations/ngo1.jpg')}}" class="img-responsive">--}}
-                                           </a>                                           
-                                        <h4 class="organization-links">{{ $organization->name }}</h4>
-                                        </div>
-                                        <p class="organization-links">{{ $organization->location }}</p>
+                                           </a>
+                                           <h4>
+                                             <a href="{{ route('organization.show', $organization['id']) }}">{{ $organization->name }}</a>
+                                          </h4>
+                                         </div>
+                                           <p>
+                                             Lorem ipsum dolor
+                                           </p>
+                                         <span class="text-muted">
+                                            <a href="#">
+                                              <i class="fa fa-fw fa-tags"></i>
+                                              Category
+                                            </a>
+                                         </span>
+                                           <span class="text-muted">
+                                             <a href="#" class="pull-right meta" title="View all organizations in {{$organization->location}}">
+                                             <i class="fa fa-fw fa-map-marker">
+                                             </i>
+                                             {{ $organization->location }}
+                                           </a>
+                                           </span>
                                     </div>
                             </div>
                         @endforeach
-                    @endif
+                    @if ($count=0 or is_int($count%3))
                 </div>
+              @endif
+              <?php $count++; ?>
+              @endif
             </div>
         </div>
     </div>

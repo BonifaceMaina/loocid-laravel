@@ -10,56 +10,39 @@
 </head>
 <body>
 <div class="container-header">
-    <nav class="navbar navbar-fixed-top " role="navigation">
-        <div class row>
-            <div class="col-sm-3">
+    <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="container-fluid">
                 <div class="navbar-header">
-                    <button id="menu-toggle" type="button" class="navbar-toggle" data-target="#navigation-doc">
-                        <span class="sr-only">Toggle navigation</span>
+                    <button  type="button" data-toggle="collapse" class="navbar-toggle" data-target="#navigation-doc">
                         <span class="icon-bar bar1"></span>
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a href="#">
-                        <div class="logo-container">
-                            <div >
-                                <img src="{{asset('/images/loocid.png')}}">
-                            </div>
-
+                        <div class="navbar-brand logo-container">
+                            <a href="#">
+                                  <img src="{{asset('/images/loocid.png')}}">
+                            </a>
                         </div>
-                    </a>
                 </div>
-
-            </div>
-            <div class="col-sm-2 ">
-                <form class="navbar-form navbar-left" role="search" method="get"action="#">
-                    <div class="form-group search-input">
-                        <input type="text" class="form-control" name="search" placeholder="Search for Organizations">
-                    </div>
-                    <!--<button type="submit" class="btn btn-default">Search</button>-->
-                </form>
-            </div>
-            <div class="col-sm-7">
+            <div class="navbar-right">
                 <div class="collapse navbar-collapse" id="navigation-doc">
-            <ul  class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="{{ route('organization.create') }}">Create Organization</a>
-                </li>
-                <li>
-                    <a href="#">About Us</a>
-                </li>
-                <li>
-                    <!--<a href="#">CREATE ORGANIZATION</a> -->
-                    <a href="{{ route('login') }}">Log In</a>
+                  <ul  class="nav navbar-nav">
+                    <li>
+                      <a href="{{ route('organization.create') }}">Create Organization</a>
+                    </li>
+                    <li>
+                      <a href="#">About Us</a>
+                    </li>
+                    <li>
+                      <a href="{{ route('login') }}">Log In</a>
+                    </li>
+                    <li>
+                      <a href="{{ route('register') }}"> Register</a>
+                    </li>
+                  </ul>
 
-                </li>
-                <li>
-                    <a href="{{ route('register') }}"> Sign Up</a>
-                </li>
-            </ul>
-
-        </div>
-            </div>
+                </div>
+          </div>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -105,7 +88,7 @@
 <script src="{{asset('/js/bootstrap.js')}}"></script>
 <script src="{{asset('/js/bootstrap.min.js')}}"></script>
 <script>
-   
+
         $('.carousel').carousel({
             interval: 3000
 
