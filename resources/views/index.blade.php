@@ -47,15 +47,23 @@
 
 
     <div class="container">
+
         <div class="section">
             <div class="container-fluid">
+                <h4>
+                  <i class="fa fa-bg fa-info-circle bg-3">
+                  </i>Featured Organizations
+                  <a class="btn btn-primary pull-right" title="Join Loocid Today!" href={{route('organization.create')}}>
+                    <i class="fa fa-fw fa-user-add"></i>Get Featured
+                  </a>
+                </h4>
                     @if($organizations)
                     <?php $count=0; ?>
                     @if ($count=0 or is_int($count%3))
                     <div class="row">
                       @endif
                         @foreach($organizations as $organization)
-                            <div class="col-xs-12 col-md-4">
+                            <div class="col-xs-12 col-sm-4">
                                     <div class="column column-height">
                                         <div class="image-container">
                                            <a href="{{ route('organization.show', $organization['id']) }}">

@@ -1,10 +1,12 @@
 <html>
 <head>
     <title>Loocid</title>
+    <link rel="icon" href="{{asset('/images/favicon.ico')}}" />
     <link href="{{asset('/css/bootstrap.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('/css/bootstrap-theme.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('/css/bootstrap-theme.min.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" type="text/css" href="{{asset('fonts/css/font-awesome.min.css')}}">
     <link href="{{asset('/css/custom.css')}}" rel="stylesheet" type="text/css">
 </head>
@@ -20,7 +22,7 @@
                     </button>
                         <div class="navbar-brand logo-container">
                             <a href="#">
-                                  <img src="{{asset('/images/loocid.png')}}">
+                                  <img src="{{asset('/images/loocid.png')}}" class="img-responsive">
                             </a>
                         </div>
                 </div>
@@ -28,7 +30,7 @@
                 <div class="collapse navbar-collapse" id="navigation-doc">
                   <ul  class="nav navbar-nav">
                     <li>
-                      <a href="{{ route('organization.create') }}">Create Organization</a>
+                      <a href="#">Organizations</a>
                     </li>
                     <li>
                       <a href="#">About Us</a>
