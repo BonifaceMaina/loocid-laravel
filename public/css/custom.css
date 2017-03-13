@@ -1,13 +1,17 @@
 body{
     /*background-image: url('/images/background.png');*/
-    font:Helvetica;
+    font-family: 'Montserrat', serif;
     font-size: 12px;
+    line-height: 2em;
     background-color: #ebebd9;
     height: auto !important;
 
 }
 p{
       margin: 0 0 1.4em;
+}
+.register{
+  padding-top: 40px;
 }
 /*slider css*/
 .carousel-fade .carousel-inner .item {
@@ -91,7 +95,6 @@ height: 100%;
 .image-container{
   position: relative;
     height:150px;
-    width:350px;
     padding: 15px;
     display: block;
 }
@@ -180,6 +183,7 @@ height: 100%;
 .basic-content-container{
     line-height: 170%;
     color: #333;
+    padding-top: 5px;
     padding-left: 15px;
     padding-right: 15px;
     background-color: white;
@@ -233,12 +237,11 @@ height: 100%;
     float: right;
     text-align: right;
 }
-ul ol{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+footer ul li{
+  list-style-type: none;
+  display: inline;
 }
+
 ul li{
-    display: inline;
     padding: 5px;
 }

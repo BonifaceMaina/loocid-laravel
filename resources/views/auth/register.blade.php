@@ -3,22 +3,36 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-xs-12 col-md-8 register">
+          <h3>
+            <i></i> Sign Up for a Loocid Account
+          </h3>
+          <div class="basic-content-container">
+            <p>
+              To get featured on Loocid, fill all the fields in the form below or use the Social Signup buttons on the right.<br />
+              After registering, an activation link will be sent to your email address for confirmation and you will be ready to go!
+            </p>
+          </div>
+
+
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <div class="panel-heading">Registration Form</div>
                 <div class="panel-body">
+                  <legend>
+                    Account Details
+                  </legend>
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                            <label for="name" class="col-md-4 control-label">Username</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
 
-                                @if ($errors->has('name'))
+                                @if ($errors->has('username'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('username') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -60,6 +74,49 @@
                             </div>
                         </div>
 
+                        <legend>
+                          Tell us a little about yourself
+                        </legend>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">Name</label>
+                        <div class="col-md-6">
+                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+
+                            @if ($errors->has('name'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                          <label for="password" class="col-md-4 control-label">Country</label>
+                        <div class="col-md-6">
+                            <input id="country" type="text" class="form-control" name="country" value="{{ old('name') }}" required autofocus>
+
+                            @if ($errors->has('country'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('country') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                          <label for="password" class="col-md-4 control-label">City</label>
+                        <div class="col-md-6">
+                            <input id="city" type="text" class="form-control" name="city" value="{{ old('city') }}" required autofocus>
+
+                            @if ($errors->has('name'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('city') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                      </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -71,6 +128,30 @@
                 </div>
             </div>
         </div>
+
+          <aside class="pull-right register">
+            <h3>  Why join Loocid?</h3>
+            </aside>
+            <div class="col-xs-12 col-md-4 basic-content-container">
+            <p>
+              Be a part of a strong donor-organization community.
+            </p>
+              <ul>
+                <li>
+                  Organizations: Get featured to potential donors and well-wishers
+                </li>
+                <li>
+                  Donors: Be part of organizations through your donations. Receive classified information regarding use of funds.
+                </li>
+                <li>
+                  Pro-User: Get in-depth information about various organizations and how money is spent.
+                </li>
+              </ul>
+            </div>
+          
+            <div class="basic-content-container">
+              <!-- this is where oneall API will fall. -->
+            </div>
     </div>
 </div>
 @endsection
