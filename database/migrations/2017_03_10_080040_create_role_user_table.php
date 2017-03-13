@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrganizationRoleUser extends Migration
+class CreateRoleUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateOrganizationRoleUser extends Migration
      */
     public function up()
     {
-        Schema::create('organization_role_user', function (Blueprint $table) {
+        Schema::create('role_user', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('organization_id');
             $table->integer('role_id');
             $table->integer('user_id');
             $table->timestamps();
@@ -29,6 +28,6 @@ class CreateOrganizationRoleUser extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('organization_role_user');
+        Schema::dropIfExists('role_user');
     }
 }
