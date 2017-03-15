@@ -21,9 +21,9 @@ class CreateUsersActivationTable extends Migration
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
 
-        Schema::table('users', function (Blueprint $table) {
-            $table->boolean('is_activated')->default(0);
-        });
+//        Schema::table('users', function (Blueprint $table) {
+//            $table->boolean('is_activated')->default(0);
+//        });
     }
 
     /**
@@ -34,8 +34,8 @@ class CreateUsersActivationTable extends Migration
     public function down()
     {
         Schema::drop("user_activations");
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('is_activated');
-        });
+//        Schema::table('users', function (Blueprint $table) {
+//            $table->dropColumn('is_activated');
+//        });
     }
 }
