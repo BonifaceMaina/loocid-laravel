@@ -12,16 +12,26 @@ class RoleTableSeeder extends Seeder
      */
     public function run()
     {
-        $role_user = new Role();
-        $role_user->name = 'User';
-        $role_user->save();
+        $role = new Role();
+        $roleUser = $role->create([
+            'name' => 'basic_user',
+            'slug' => 'user',
+            'description' => 'can view basic pages on the website'
+        ]);
 
-        $role_prouser = new Role();
-        $role_prouser->name = 'ProUser';
-        $role_prouser->save();
+        $role = new Role();
+        $roleProuser = $role->create([
+            'name' => 'pro_user',
+            'slug' => 'prouser',
+            'description' => 'Has access to more information about organizations'
+        ]);
 
-        $role_donor = new Role();
-        $role_donor->name = 'Donor';
-        $role_donor->save();
+        $role = new Role();
+        $roleDonor = $role->create([
+            'name' => 'donor',
+            'slug' => 'donor',
+            'description' => 'Has more detailed information about specific organizations.'
+        ]);
+
     }
 }
