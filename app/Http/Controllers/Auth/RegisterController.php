@@ -71,6 +71,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+
     }
     public function register(Request $request) {
         $input = $request->all();
@@ -80,6 +82,8 @@ class RegisterController extends Controller
             $user = $this->create($input)->toArray();
             $user['link'] = str_random(30);
 
+
+            //user activation code
             DB::table('user_activations')->insert(['id_user'=>$user['id'],'token'=>$user['link']]);
 
             Mail::send('emails.activation', $user, function($message) use ($user){
