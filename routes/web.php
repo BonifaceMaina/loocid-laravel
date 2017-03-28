@@ -35,3 +35,6 @@ Route::get('/user/activation/{token}', 'Auth\RegisterController@userActivation')
 Route::get('/organizations', function (){
    return view('organizations');
 });
+
+//Projects routes
+Route::resource('/project', 'ProjectsController');

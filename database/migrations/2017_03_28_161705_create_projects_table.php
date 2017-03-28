@@ -4,21 +4,23 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrganizationsProjectsTable extends Migration
+class CreateProjectsTable extends Migration
 {
     /**
      * Run the migrations.
-     * This will track organization's projects which could contain both text and media like images
+     *
      * @return void
      */
     public function up()
     {
-        Schema::create('organizations_projects', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('project_name');
+            $table->integer('organization_id')->default(1);
+            $table->string('name');
+            $table->string('location');
             $table->text('description')->nullable();
             $table->date('start_date')->nullable();
-            $table->text('end_date')->nullable();
+            $table->date('end_date')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ class CreateOrganizationsProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('organizations_projects');
+        Schema::dropIfExists('projects');
     }
 }

@@ -15,21 +15,31 @@ class PermissionsTableSeeder extends Seeder
         $permission = new Permission();
         $permUser = $permission->create([
             'name'        => 'user',
-            'slug'        => 'basicview',
-            'description' => 'can view basic organizational information and create organizations'
+            'slug'        => [
+                'view'               => true,
+                'createOrganization' => true,
+                'editOrganization'   => true,
+                'updateOrganization' => true,
+                'deleteOrganization' => true
+            ],
+            'description' => 'can view basic organizational information and CRUD own organizations'
         ]);
 
         $permission = new Permission();
         $permProuser = $permission->create([
             'name'        => 'prouser',
-            'slug'        => 'prouserview',
-            'description' => 'has access to more information about organizations'
+            'slug'        => [
+                'middleAccessView'  => true,
+            ],
+            'description' => 'has middle level access to all organizations on Loocid'
         ]);
 
         $permission = new Permission();
         $permDonor = $permission->create([
             'name'        => 'donor',
-            'slug'        => 'donorview',
+            'slug'        => [
+                'advancedAccessView'  => true,
+            ],
             'description' => 'Has super level access to information about organizations he/she has donated to.'
         ]);
     }

@@ -19,6 +19,8 @@
                         <div class="col-sm-9">
                         {!! Form::model($organization, ['method'=>'PATCH','action'=>['OrganizationsController@update', $organization->id], 'files'=>true]) !!}
 
+                            {{ csrf_field() }}
+
                             <div class="form-group">
                                 {!! Form::label('name', 'Name') !!}
                                 {!! Form::text('name', null, ['class' => 'form-control']) !!}
