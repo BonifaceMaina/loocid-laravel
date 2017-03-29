@@ -38,3 +38,13 @@ Route::get('/organizations', function (){
 
 //Projects routes
 Route::resource('/project', 'ProjectsController');
+
+
+//share links to social media
+Route::get('/share', function()
+{
+    return Share::load('http://www.wachiraweb.com', 'New blog post')->facebook();
+
+    //return Share::load('http://www.example.com', 'Link description')->services('facebook', 'gplus', 'twitter');
+
+});
