@@ -30,7 +30,7 @@
                 <div class="collapse navbar-collapse" id="navigation-doc">
                   <ul  class="nav navbar-nav">
                     <li>
-                      <a href="#">Organizations</a>
+                      <a href="{{url('organizations')}}">Organizations</a>
                     </li>
                     <li>
                       <a href="#">About Us</a>

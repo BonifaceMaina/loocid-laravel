@@ -5,7 +5,11 @@ body{
     line-height: 2em;
     background-color: #ebebd9;
     height: auto !important;
+    /*overflow-y: hidden;*/
+}
 
+.image-container a{
+  color:#000;
 }
 p{
       margin: 0 0 1.4em;
@@ -163,21 +167,9 @@ height: 100%;
     align-items: center;
 }
 
-.donate-tab{
-    padding-top: 0px;
-}
-
-.container{
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.organizational-container{
-    padding-top: 60px;
-}
-.row{
-    padding-bottom: 0px;
-    padding-top: 5px;
+.avatar-container{
+    height: 40px;
+    width: 100px;
 }
 
 .basic-content-container{
@@ -193,53 +185,96 @@ height: 100%;
     border-top: 0px !important;
     height: 30px;
 }
-
-.avatar-container{
-    height: 40px;
-    width: 100px;
-}
-
-.inner-avatar{
-    max-width: 100%;
-    max-height: 100%;
-}
-.tagline{
-    display: inline-block;
-}
-
-.organizational-details{
-    font-weight: 600;
-    color: #0f0f0f;
-    font-size: 15px;
-
-}
-
 .basic-content-container tr{
     line-height: 5px;
 }
-.login-container{
-    padding-top: 40px;
+
+.container{
+    padding-top: 60px;
+    padding-bottom: 0px !important;
+    min-height: 72%;
 }
+.donate-tab{
+    padding-top: 0px;
+}
+
 .footer{
     background-color: #000;
+    height: 170px;
     position: absolute;
     width: 100%;
+    padding-bottom: 0px !important;
 
 }
+
+.footer-links{
+    width: 49.525%;
+    float: right;
+    text-align: right;
+}
+
 .footer-text{
     width: 40.677%;
     float: left;
     color: #888;
     margin-bottom: 5px;
 }
-.footer-links{
-    width: 49.525%;
-    float: right;
-    text-align: right;
-}
+
 footer ul li{
   list-style-type: none;
   display: inline;
+}
+
+.header-div a{
+  display: block;
+  padding: 0;
+}
+
+.inner-avatar{
+    max-width: 100%;
+    max-height: 100%;
+}
+label{
+  display: block;
+  padding-bottom: 0;
+  vertical-align: baseline;
+
+  border-radius: 0;
+  clear: both;
+}
+
+.login-container{
+    padding-top: 40px;
+}
+
+.meta{
+  font-size: 85%;
+  margin: 0;
+}
+.meta a{
+  font-weight: 100;
+}
+
+.organizational-container{
+    padding-top: 60px;
+}
+
+.organizational-details{
+    font-weight: 600;
+    color: #0f0f0f;
+    font-size: 15px;
+}
+
+.show-more-button{
+  color: #000;
+  background-color: #d2d2c6;
+  width: 100%;
+  float: left;
+  border-color: 1px solid;
+}
+
+.tagline{
+    display: inline-block;
 }
 
 ul li{

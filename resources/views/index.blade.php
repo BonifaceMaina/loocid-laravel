@@ -50,6 +50,7 @@
 
         <div class="section">
             <div class="container-fluid">
+              <div class="header-div">                
                 <h4>
                   <i class="fa fa-bg fa-info-circle bg-3">
                   </i>Featured Organizations
@@ -57,6 +58,7 @@
                     <i class="fa fa-fw fa-user-add"></i>Get Featured
                   </a>
                 </h4>
+              </div>
                     @if($organizations)
                     <?php $count=0; ?>
                     @if ($count=0 or is_int($count%3))

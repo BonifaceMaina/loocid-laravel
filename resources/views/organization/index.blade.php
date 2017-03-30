@@ -2,5 +2,4 @@
 
 @section('content')
 
-    @if($organization)
-    
+@endsection

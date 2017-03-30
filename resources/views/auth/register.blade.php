@@ -109,6 +109,39 @@
                         <div class="col-md-6">
                             <input id="city" type="text" class="form-control" name="city" value="{{ old('city') }}" required autofocus>
 
+                            @if ($errors->has('city'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('city') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                      </div>
+                      <!-- checkboxes -->
+                      <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                          <label for="category" class="col-md-4 control-label">Register As:</label>
+                        <div class="col-md-6">
+                          <label>
+                            <input type="checkbox" name="organization" value="organization" />
+                            Organization
+                          </label><br />
+
+                          <label>
+                            <input type="checkbox" name="donor" value="donor" />
+                            Donor
+                          </label><br />
+
+                          <label>
+                            <input type="checkbox" name="user" value="user" />
+                            User
+                          </label><br />
+
+                          <p>
+                            <small class="help-information">
+                              <i class="fa fa-info-circle">
+                              </i>
+                              This information will help offer you customized experience on the platform
+                            </small>
+                          </p>
                             @if ($errors->has('name'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('city') }}</strong>
@@ -116,6 +149,7 @@
                             @endif
                         </div>
                       </div>
+
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
@@ -132,7 +166,9 @@
           <aside class="pull-right register">
             <h3>  Why join Loocid?</h3>
             </aside>
-            <div class="col-xs-12 col-md-4 basic-content-container">
+            <div  class="col-xs-12 col-md-4">
+
+            <div class="basic-content-container">
             <p>
               Be a part of a strong donor-organization community.
             </p>
@@ -148,10 +184,18 @@
                 </li>
               </ul>
             </div>
-          
+            <h4>Social Registration</h4>
             <div class="basic-content-container">
+
+              <p>
+                Here will be the links to social accounts for easier registration.
+              </p>
               <!-- this is where oneall API will fall. -->
             </div>
+          </div>
+
+
+
     </div>
 </div>
 @endsection
