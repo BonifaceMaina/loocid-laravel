@@ -4,7 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Projects extends Model
+class Project extends Model
 {
-    protected $table = "organizations_projects";
+    protected $fillable = ['name', 'description', 'start_date', 'end_date', 'location'];
+
+
+    public function organization () {
+        return $this->belongsTo('App\Organization');
+    }
 }

@@ -16,5 +16,7 @@ class Organization extends Model
         return $this->belongsTo('App\Photo');
     }
 
-
+    public function projects() {
+        return $this->hasMany('App\Project');
+    }
 }

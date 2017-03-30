@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Role;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -70,6 +71,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+
     }
     public function register(Request $request) {
         $input = $request->all();
@@ -79,6 +82,8 @@ class RegisterController extends Controller
             $user = $this->create($input)->toArray();
             $user['link'] = str_random(30);
 
+
+            //user activation code
             DB::table('user_activations')->insert(['id_user'=>$user['id'],'token'=>$user['link']]);
 
             Mail::send('emails.activation', $user, function($message) use ($user){
@@ -94,14 +99,19 @@ class RegisterController extends Controller
         $check = DB::table('user_activations')->where('token',$token)->first();
         if(!is_null($check)){
             $user = User::find($check->id_user);
-            if ($user->is_activated ==1){
-                return redirect()->to('login')->with('success',"user are already actived.");
+            if ($user->is_activated == 1){
+                return redirect()->to('login')->with('success',"You are already activated.");
 
+            } else {
+                DB::table('users')->where('id', $user->id)->update(['is_activated' => 1]);
+                //$user->update(['is_activated' => 1]);
+                DB::table('user_activations')->where('token',$token)->delete();
+                return redirect()->to('login')->with('success',"User activated successfully.");
             }
-            $user->update(['is_activated' => 1]);
-            DB::table('user_activations')->where('token',$token)->delete();
-            return redirect()->to('login')->with('success',"user active successfully.");
+//            $user->update(['is_activated' => 1]);
+//            DB::table('user_activations')->where('token',$token)->delete();
+//            return redirect()->to('login')->with('success',"User activated successfully.");
         }
-        return redirect()->to('login')->with('Warning',"your token is invalid");
+        return redirect()->to('login')->with('Warning',"Your token is invalid");
     }
 }
