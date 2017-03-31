@@ -44,6 +44,10 @@
                     </li>
                     @else
                     <li>
+                      <a href="{{ route('organization/create') }}"> Create Organization</a>
+                    </li>
+
+                    <li>
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
