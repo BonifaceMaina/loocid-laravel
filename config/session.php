@@ -148,8 +148,8 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN', 'localhost:8000'),
-
+    //'domain' => env('SESSION_DOMAIN', 'localhost:8000'),
+    'domain' => env(null),
     /*
     |--------------------------------------------------------------------------
     | HTTPS Only Cookies
