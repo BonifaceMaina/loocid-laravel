@@ -35,12 +35,26 @@
                     <li>
                       <a href="#">About Us</a>
                     </li>
+                    @if (Auth::guest())
                     <li>
                       <a href="{{ route('login') }}">Log In</a>
                     </li>
                     <li>
                       <a href="{{ route('register') }}"> Register</a>
                     </li>
+                    @else
+                    <li>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
+                    @endif
                   </ul>
 
                 </div>
@@ -86,9 +100,12 @@
 </footer>
 </body>
 {{--scripts needed--}}
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxdpbgUDgfV5TB0ypjiyXyT2-VxlpxliI"></script>
 <script src="{{asset('/js/jquery.min.js')}}"></script>
+<script src="{{asset('/js/script.js')}}"></script>
 <script src="{{asset('/js/bootstrap.js')}}"></script>
 <script src="{{asset('/js/bootstrap.min.js')}}"></script>
+
 <script>
 
         $('.carousel').carousel({

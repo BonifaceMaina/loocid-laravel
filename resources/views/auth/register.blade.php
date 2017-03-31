@@ -117,7 +117,7 @@
                         </div>
                       </div>
                       <!-- checkboxes -->
-                      <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                      <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} register-as">
                           <label for="category" class="col-md-4 control-label">Register As:</label>
                         <div class="col-md-6">
                           <label>
