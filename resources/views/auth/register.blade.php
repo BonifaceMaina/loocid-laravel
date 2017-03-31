@@ -159,6 +159,8 @@
                             </div>
                         </div>
                     </form>
+
+
                 </div>
             </div>
         </div>
@@ -190,6 +192,25 @@
               <p>
                 Here will be the links to social accounts for easier registration.
               </p>
+                {{--< Social links start>--}}
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                    <!--Other form fields above the button-->
+                    {{--<div class="form-group">--}}
+                    {{--<div class="col-md-6 col-md-offset-4">--}}
+                    {{--<button type="submit" class="btn btn-primary">--}}
+                    {{--<i class="fa fa-btn fa-user"></i> Register--}}
+                    {{--</button>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    <hr>
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-4">
+                            <a href="{{ url('#') }}" class="btn btn-linkedin"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                            <a href="{{ url('#') }}" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+                            <a href="{{ url('#') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+                        </div>
+                    </div>
+                </form>
               <!-- this is where oneall API will fall. -->
             </div>
           </div>

@@ -74,6 +74,17 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
+
+                                {{--< social media login links>--}}
+                                <hr>
+                                <div class="form-group">
+                                    <div class="centered">
+                                        {{--<<a href="{{ url('/auth/github') }}" class="btn btn-github"><i class="fa fa-github"></i> Github</a>>--}}
+                                        {{--<<a href="{{ url('/auth/twitter') }}" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>>--}}
+                                        <a href="{{ url('/auth/facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Log in with Facebook</a>
+                                        <p>FB login still in development. You could try it out but it won't log you in yet.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>
